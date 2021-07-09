@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="gatos.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <title>Document</title>
+</head>
+<body>
+    <div id="container">
+        <div class="bg"></div>
+        <div class="bg bg2"></div>
+        <div class="bg bg3"></div>
+        <div class="content">
+            <div id="informaciondeljuego">{{turnostxt}}</div>
+        <div id="cuadros">
+            <div  class="cuadro1" @click="jugar(1)">
+                {{c1}}
+            </div>
+            <div class="cuadro2"  @click="jugar(2)">
+                {{c2}}
+            </div>
+            <div class="cuadro3"  @click="jugar(3)">
+                {{c3}}
+            </div>
+            <div class="cuadro4"  @click="jugar(4)">
+                {{c4}}
+            </div>
+            <div class="cuadro5" @click="jugar(5)">
+                {{c5}}
+            </div>
+            <div class="cuadro6" @click="jugar(6)">
+                {{c6}}
+            </div>
+            <div class="cuadro7" @click="jugar(7)">
+                {{c7}}
+            </div>
+            <div class="cuadro8" @click="jugar(8)">
+                {{c8}}
+            </div>
+            <div class="cuadro9" @click="jugar(9)">
+                {{c9}}
+            </div>
+            <button style="margin-left: 710px;" type="button" class="btn btn-danger" onclick="location.reload()">Reiniciar Juego</button>
+            </div>
+            <div style="font-family: cursive;color: black;font-size: 35px;">{{ganador}}</div>
+        </div>
+        </div>
+        
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <script>
+       var bm= new Vue({
+            el:"#container",
+            data:{
+                turno:0,
+                turnostxt:"Es turno de X!!!",
+                pos:0,
+                c1:"",
+                c2:"",
+                c3:"",
+                c4:"",
+                c4:"",
+                c5:"",
+                c6:"",
+                c7:"",
+                c8:"",
+                c9:"",
+                disp1:true,
+                disp2:true,
+                disp3:true,
+                disp4:true,
+                disp5:true,
+                disp6:true,
+                disp7:true,
+                disp8:true,
+                disp9:true,
+                ganar:0,
+                ganador:"",
+            },
+            methods:{
+                jugar:function(pos){
+                    //TURNOS                          //
+                    if(pos==1){
+                        if(this.turno==0&&this.disp1==true){
+                            this.turno=1
+                            this.c1="X"
+                            this.disp1=false
+                        }
+                        else if(this.disp1==true){
+                     this.c1="O",
+                     this.turno=0
+                     this.disp1=false
+                 }
+             }
+             else if(pos==2){
+                if(this.turno==0&&this.disp2==true){
+                     this.c2="X",
+                     this.turno=1
+                     this.disp2=false
+                 }
+                 else if(this.disp2==true){
+                     this.c2="O",
+                     this.turno=0
+                     this.disp2=false
+                 }
+             }
+             else if(pos==3){
+                if(this.turno==0&&this.disp3==true){
+                     this.c3="X",
+                     this.turno=1
+                     this.disp3=false
+                 }
+                 else if(this.disp3==true){
+                     this.c3="O",
+                     this.turno=0
+                     this.disp3=false
+                 }
+             }
+             else if(pos==4){
+                if(this.turno==0&&this.disp4==true){
+                     this.c4="X",
+                     this.turno=1
+                     this.disp4=false
+                 }
+                 else if(this.disp4==true){
+                     this.c4="O",
+                     this.turno=0
+                     this.disp4=false
+                 }
+             }
+             else if(pos==5){
+                if(this.turno==0&&this.disp5==true){
+                     this.c5="X",
+                     this.turno=1
+                     this.disp5=false
+                 }
+                 else if(this.disp5==true){
+                     this.c5="O",
+                     this.turno=0
+                     this.disp5=false
+                 }
+             }
+             else if(pos==6){
+                if(this.turno==0&&this.disp6==true){
+                     this.c6="X",
+                     this.turno=1
+                     this.disp6=false
+                 }
+                 else if(this.disp6==true){
+                     this.c6="O",
+                     this.turno=0
+                     this.disp6=false
+                 }
+             }
+             else if(pos==7){
+                if(this.turno==0&&this.disp7==true){
+                     this.c7="X",
+                     this.turno=1
+                     this.disp7=false
+                 }
+                 else if(this.disp7==true){
+                     this.c7="O",
+                     this.turno=0
+                     this.disp7=false
+                 }
+             }
+             else if(pos==8){
+                if(this.turno==0&&this.disp8==true){
+                     this.c8="X",
+                     this.turno=1
+                     this.disp8=false
+                 }
+                 else if(this.disp8==true){
+                     this.c8="O",
+                     this.turno=0
+                     this.disp8=false
+                 }
+             }
+             else if(pos==9){
+                if(this.turno==0&&this.disp9==true){
+                     this.c9="X",
+                     this.turno=1
+                     this.disp9=false
+                 }
+                 else if(this.disp9==true){
+                     this.c9="O",
+                     this.turno=0
+                     this.disp9=false
+                 }
+             }
+             if(this.turno==0){
+                 this.turnostxt="Es turno de X!!!"
+             }
+             else{
+                 this.turnostxt="Es turno de O!!!"
+             }
+               //CONDICION PARA GANAR//
+               if(this.c1=="X"&&this.c2=="X"&&this.c3=="X" || this.c1=="X"&&this.c4=="X"&&this.c7=="X" || this.c1=="X"&&this.c5=="X"&&this.c9=="X" || this.c2=="X"&&this.c5=="X"&&this.c8=="X" || this.c3=="X"&&this.c6=="X"&&this.c9=="X" || this.c3=="X"&&this.c5=="X"&&this.c7=="X" || this.c4=="X"&&this.c5=="X"&&this.c6=="X" || this.c7=="X"&&this.c8=="X"&&this.c9=="X")
+            {
+                 this.ganar=2
+                 this.ganador="Ganó X!!!"
+            }
+            else if(this.c1=="O"&&this.c2=="O"&&this.c3=="O" || this.c1=="O"&&this.c4=="O"&&this.c7=="O" || this.c1=="O"&&this.c5=="O"&&this.c9=="O" || this.c2=="O"&&this.c5=="O"&&this.c8=="O" || this.c3=="O"&&this.c6=="O"&&this.c9=="O" || this.c3=="O"&&this.c5=="O"&&this.c7=="O" || this.c4=="O"&&this.c5=="O"&&this.c6=="O" || this.c7=="O"&&this.c8=="O"&&this.c9=="O")
+            {
+                 this.ganar=1
+                 this.ganador="Ganó O!!!"
+            }     
+            if(this.ganar==2||this.ganar==1){
+                this.disp1=false
+                 this.disp2=false
+                 this.disp3=false
+                this.disp4=false
+                 this.disp5=false
+                 this.disp6=false
+                 this.disp7=false
+                 this.disp8=false
+                 this.disp9=false
+            }
+        }
+            }
+        })
+    </script>
+</body>
+</html>
